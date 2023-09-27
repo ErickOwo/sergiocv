@@ -1,0 +1,374 @@
+
+*{  
+font-family: Montserrat-VariableFont_wght;
+font-weight: 30;
+}
+
+body {
+background-color: yellow;
+}
+
+.grid-container {
+  display: grid;
+  margin: 10px;
+  grid-template-areas:
+    "title title title"
+    "contact contact contact"
+    "contact contact contact"
+    "sumary sumary sumary"
+    "sumary sumary sumary"
+    "sumary sumary sumary"
+    "skills skills skills"
+    "skills skills skills"
+    "xperience xperience xperience"
+    "xperience xperience xperience"
+    "xperience xperience xperience"
+    "xperience xperience xperience"
+    "education education education"
+    "education education education";
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 2fr 1fr 1fr 1fr 1fr 1.5fr 1fr 1fr;
+  height: 100vh;
+}
+
+.grid-title {
+  grid-area: title;
+  background-color: skyblue;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  max-height: 90px;
+}
+
+.grid-title h1 {
+  padding-left: 10px;
+  padding-bottom: 15px;
+  font-size: 14px;
+  font-family: Montserrat, sans-serif;
+  Font Weight: Bold
+  color: #213126;
+}
+
+.en {
+  color: #213126;
+}
+
+.es {
+  color: #213126;
+}
+
+.language-toggle {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.check {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  background-color: #0044;
+  border-radius: 50%;
+  transition: 0.25s;
+}
+
+.check:checked + .slider {
+  transform: translateX(30px);
+}
+
+.check:checked + .slider:before {
+  content: "ES";
+  color: white;
+  font-size: 14px;
+  line-height: 30px;
+  padding-left: 10px;
+}
+
+.slider:before {
+  content: "EN";
+  color: white;
+  font-size: 14px;
+  line-height: 30px;
+  padding-left: 10px;
+}
+
+
+
+.grid-contact {
+  background: #213126;
+  grid-area: contact;
+  display: flex;
+  flex-direction: column;
+ justify-content: space-evenly;
+  min-height: 90px;
+  align-items: flex-start;
+ }
+
+.grid-contact span {
+  color: white;
+  font-size: 14px;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+/* Estilo para el enlace dentro de .grid-contact */
+.grid-contact a {
+    color: #fff; /* Color del texto claro para el enlace */
+    text-decoration: none; /* Elimina la subraya por defecto */
+}
+
+/* Estilo para el enlace cuando el cursor está sobre él */
+.grid-contact a:hover {
+    color: #fcc; /* Color del texto claro en hover */
+    /* Puedes personalizar el color en hover según tus preferencias */
+}
+
+
+.direccion-text {
+display: grid;
+grid-template-areas:
+"location ciudad"
+"location codigo";
+grid-template-rows: 1fr 1fr;
+margin-left: 40px;
+align-items: center;
+}
+
+.direccion-text i {
+	grid-area: location;
+	margin-right: 3px;
+  }
+
+.direccion-text .ciudad {
+	display: inline;
+	grid-area: ciudad;
+	margin-top: 0px;
+	margin-left: 0px;
+}
+
+.direccion-text .postal-code {
+	display: inline;
+	grid-area: codigo;
+	margin-bottom: 0px;ñ
+	margin-left: 0;
+}
+
+
+.grid-sumary {
+background-color: white;
+grid-area: sumary;
+margin: 0;
+padding: 0;
+display: flex;
+flex-direction: column;
+}
+
+.grid-sumary h1 {
+	font-family: Montserrat, sans-serif;
+	font-weight: bold;
+	font-size: 14px;
+	margin: 0 auto;
+	padding: 0;
+	text-align: center;
+}
+
+.grid-sumary p {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	font-size: 11px;
+	margin: 5px 5px 5px 0px;
+	text-align: start;
+	text-justify: start;
+	color: #333;
+	flex-grow: 1; 
+	min-height: 290px;
+  overflow: auto;
+ }
+
+.grid-skills {
+grid-area: skills;
+background-color: white;
+margin: 0;
+}
+
+.grid-skills h1 {
+	font-family: Montserrat, sans-serif;
+	font-weight: bold;
+	font-size: 14px;
+	margin: 0 auto;
+	padding: 0;
+	text-align: center;
+}
+
+.lista_de_skills {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 12px;
+  color: black;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.columna {
+  flex: 1;
+  list-style-type: disc;
+  font-family: 'Open Sans', sans-serif;
+  padding-left: 20px;
+  margin: 0;
+}
+
+
+.grid-xperience {
+grid-area: xperience;
+background-color: white;
+margin: 0;
+padding: 0;
+max-height: 260px;
+}
+
+.grid-xperience h1 {  
+	font-family: Montserrat, sans-serif;
+	font-weight: bold;
+	font-size: 14px;
+	margin: 0 auto;
+	padding: 0;
+	text-align: center;
+}
+
+
+
+.cv {
+  display: flex;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+  margin: 5px;
+}
+
+.cv__entry {
+  background-color: #f4f4f4;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+
+.cv__position {
+  font-weight: bold;
+  font-size: 10px;
+}
+
+.cv__company {
+  color: #555;
+  font-size: 10px;
+}
+
+.cv__duration {
+  font-size: 9px;
+  color: #888;
+  font-size: 10px;
+}
+
+
+.grid-education {
+background-color: white;
+}
+
+.grid-education h1 {  
+	font-family: Montserrat, sans-serif;
+	font-weight: bold;
+	font-size: 14px;
+	margin: 0;
+}
+
+
+.grid-education h1 {
+    font-family: Montserrat, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    margin: 0;
+}
+
+.education-places {
+    display: flex;
+    background-color: white;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+    margin: 20px;
+}
+
+.studies-training {
+    display: inline-block; /* Cambiamos 'display: inline;' a 'display: inline-block;' */
+    text-align: center; /* Agregamos esto para centrar el contenido */
+}
+
+.studies-img img {
+    max-height: 50px;
+    object-fit: scale-down;
+}
+
+.materia {
+    font-size: 12px;
+}
+
+
+@media screen and (min-width: 380px) { 
+  .grid-sumary p::after {
+    content: " In addition, I have worked as a journalist, effectively applying what I have learned in digital advertising.";
+  }
+}
+
+@media screen and (min-width: 380px) { 
+  .grid-sumary p {
+    content: " In addition, I have worked as a journalist, effectively applying what I have learned in digital advertising.";
+  }
+}
+
+
+/* Estilos para dispositivos móviles (mobile-first) */
+.cv {
+  display: grid;
+  grid-template-columns: 100%; /* Una columna para dispositivos móviles */
+  gap: 5px;
+  margin: 5px;
+}
+
+.cv__entry {
+  width: 100%; /* El ancho de una entrada ocupa el 100% del contenedor padre */
+  background-color: #f4f4f4;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px; /* Espacio entre las entradas */
+}
+
+/* Estilos para dispositivos de pantalla más grande (responsive) */
+@media (min-width: 768px) {
+  .cv {
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas para pantallas más grandes */
+  }
+
+  .cv__entry {
+    margin-bottom: 20px; /* Espacio entre las entradas en pantallas más grandes */
+  }
+}
+
+
+
+@media (min-width: 768px) {
+  .grid-sumary {
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas para pantallas más grandes */
+  
+  .sumary {
+    margin-bottom: 20px; /* Espacio entre las entradas en pantallas más grandes */
+  }
+}
